@@ -1,0 +1,13 @@
+DROP TABLE curso;
+
+CREATE TABLE curso(
+id INTEGER NOT NULL unique,
+nome VARCHAR(255) NOT NULL
+);
+
+INSERT INTO curso (id, nome)VALUES(1, 'HTML');
+
+INSERT INTO curso (id, nome)VALUES(2, 'Javascript');
+
+
+select * From curso;

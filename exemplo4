@@ -1,0 +1,63 @@
+drop table aluno_curso;
+
+
+CREATE TABLE aluno_curso (
+    aluno_id INTEGER,
+        curso_id INTEGER,
+        PRIMARY KEY (aluno_id, curso_id),
+
+        FOREIGN KEY (aluno_id)
+         REFERENCES aluno (id),
+
+        FOREIGN KEY (curso_id)
+         REFERENCES curso (id)
+
+);
+
+INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (1,1);
+INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (2,1);
+
+select * from aluno;
+select * from aluno_curso;
+select * from curso;
+
+create table departamentos(
+	id SERIAL PRIMARY KEY,
+	nome varchar (255) not null,
+	departamento_id integer,
+	foreign key
+	(departamento_id)
+	references
+	departamentos(id)
+);
+
+insert into departamentos(nome) values ('Isaac Maciel');
+select * from departamentos;
+
+select funcionarios.nome AS "Nome do Funcionario",
+departamentos.nome AS "Departamento" from funcionarios join departamentos on funcionarios.departamentos_id = departamentos.id;
+
+
+
+
+
+
+select * from aluno;
+
+select * from curso;
+
+select from aluno JOIN aluno_curso ON aluno_curso.aluno_id = aluno.id;
+
+CREATE TABLE pessoas (
+    id INTEGER PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL
+);
+
+SELECT aluno.nome as "Nome do aluno",
+	   curso.nome as "Nome do curso"
+  FROM aluno
+  JOIN aluno_curso ON aluno_curso.aluno_id = aluno.id
+  JOIN curso		   ON curso.id		   = aluno_curso.curso_id;
+
+DELETE FROM aluno WHERE id =1;
+SELECT * FROM aluno;

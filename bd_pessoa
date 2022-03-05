@@ -1,0 +1,17 @@
+create table pessoa (
+	id serial primary key,
+	nome varchar (255) not null,
+	id_bairros integer,
+	foreign key (id_bairros) references bairros (id)
+);
+
+select id, nome, id_bairros from pessoa;
+
+select id,endereco, numero from bairros;
+
+insert into pessoa(id,nome, id_bairros) values (1,'Isaac Maciel', 1);
+insert into pessoa(id,nome, id_bairros) values (2,'Luciana Teixeira', 2);
+insert into pessoa(id,nome, id_bairros) values (3,'Raiany Da Silva', 3)
+insert into pessoa(id,nome, id_bairros) values (4,'Ana Liz Pereira', 4)
+insert into pessoa(id,nome, id_bairros) values (5,'Rebeca Cordeiro', 5)
+insert into pessoa(id,nome, id_bairros) values (6,'Raimunda Nonata', 6)

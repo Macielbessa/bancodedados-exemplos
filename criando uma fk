@@ -1,0 +1,9 @@
+create table pessoa (
+	id integer primary key NOT NULL,
+	nomes varchar(255) NOT NULL,
+	cpf char (11),
+	idade integer,
+	
+	foreign key (id)
+	references bairros (numero)
+);

@@ -1,0 +1,46 @@
+//criando uma tabela pessoa para cadastrar habitantes do bairro, com atribuitos de cada um
+create table bairros (
+	id serial primary key,
+	endereco varchar (255) not null,
+	numero integer not null
+);
+//acessando uma tabela para ver se está tudo ok
+select numero,bairro_nome,endereço from bairros;
+
+//inserindo informações no banco de dados
+insert into bairros (id, endereco, numero) values (1, 'Araturi - Pedestre e vinte e sete', 70)
+insert into bairros (id, endereco, numero) values (2, 'Jurema - Av. Dom Almeida Lustosa', 1110)
+insert into bairros (id, endereco, numero) values (3, 'Potira - R. Heribaldo Rodrigues', 772)
+insert into bairros (id, endereco, numero) values (4, 'Parque Albano - R. Mozart Pinto', 2933)
+insert into bairros (id, endereco, numero) values (5, 'Metropole - Av. Contorno Oeste', 192)
+insert into bairros (id, endereco, numero) values (6, 'Centro - R. Barão de Ibiapaba', 83)
+
+// verificando a tabela
+select id, endereco, numero from bairros;
+
+// selecionando o id de cada habitante
+SELECT *
+    FROM bairros
+WHERE id = 1
+
+// atualizando a tabela pois um morador se mudou para outro bairro e entrou um novo.
+UPDATE bairros
+	 SET endereco = 'Picui R. Ana Magalhães'
+	 where id = 6
+
+// verificando mais uma vez a nossa tabela
+select id, endereco, numero from bairros;
+
+//excluindo uma pessoa depois dela ter se mudado pelo seu id
+delete from bairros where id = 6;
+
+select id, endereco, numero from bairros;
+
+
+
+
+
+
+	
+	
+
